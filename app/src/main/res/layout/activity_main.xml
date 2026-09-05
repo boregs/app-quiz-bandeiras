@@ -44,7 +44,7 @@
                 android:layout_width="205dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="NOME ALUNO\nRGM DO ALUNO" />
+                android:text="Rafael Borges da Silva\n43625525" />
 
         </LinearLayout>
 
@@ -161,6 +161,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="#008BFF"
+                android:onClick="iniciar"
                 android:text="Sair" />
         </LinearLayout>
 
