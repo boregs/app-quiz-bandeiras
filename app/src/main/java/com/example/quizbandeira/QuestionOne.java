@@ -1,0 +1,57 @@
+package com.example.quizbandeira;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.RadioButton;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+public class QuestionOne extends AppCompatActivity {
+
+    private RadioButton radioBtn1, radioBtn2, radioBtn3, radioBtn4;
+    private Button btnResponder;
+    Intent intent = getIntent();
+    Player player = (Player) intent.getSerializableExtra("USER_SCORE");
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_quiz);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+
+        radioBtn1 = findViewById(R.id.radioBtn1);
+        radioBtn2 = findViewById(R.id.radioBtn2);
+        radioBtn3 = findViewById(R.id.radioBtn3);
+        radioBtn4 = findViewById(R.id.radioBtn4);
+
+        btnResponder = findViewById(R.id.btnResponder);
+    }
+
+    public boolean isCorrectAnswer(){
+        return radioBtn4.isActivated();
+    }
+
+    public void nextQuestion(View view){
+        if (!isCorrectAnswer()){
+            player.setScore(+0);
+        }
+        player.setScore(+1);
+        Intent secondQuestion = new Intent(getApplicationContext(), QuestionTwo.class);
+
+        secondQuestion.putExtra("USER_SCORE", player.getScore());
+        startActivity(secondQuestion);
+
+        System.out.println(player.getScore());
+    }
+}
