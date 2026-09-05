@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".quiz">
+    tools:context=".QuestionOne">
 
     <LinearLayout
         android:layout_width="409dp"
@@ -34,28 +34,28 @@
             android:layout_height="match_parent" >
 
             <RadioButton
-                android:id="@+id/radioButton"
+                android:id="@+id/radioBtn1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                android:text="Bangladesh" />
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/radioBtn2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                android:text="Estônia" />
 
             <RadioButton
-                android:id="@+id/radioButton3"
+                android:id="@+id/radioBtn3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                android:text="Canadá" />
 
             <RadioButton
-                android:id="@+id/radioButton4"
+                android:id="@+id/radioBtn4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                android:text="Brasil" />
 
             <Button
                 android:id="@+id/btnResponder"
