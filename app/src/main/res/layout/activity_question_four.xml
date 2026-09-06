@@ -27,7 +27,7 @@
             android:id="@+id/imageView2"
             android:layout_width="match_parent"
             android:layout_height="325dp"
-            app:srcCompat="@drawable/mongolia" />
+            app:srcCompat="@drawable/finland" />
 
         <RadioGroup
             android:layout_width="match_parent"
@@ -37,25 +37,25 @@
                 android:id="@+id/radioBtn1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Mongólia" />
+                android:text="Dinamarca" />
 
             <RadioButton
                 android:id="@+id/radioBtn2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Quirguistão" />
+                android:text="Turquia" />
 
             <RadioButton
                 android:id="@+id/radioBtn3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cazaquistão" />
+                android:text="Finlândia" />
 
             <RadioButton
                 android:id="@+id/radioBtn4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Paquistão" />
+                android:text="Suécia" />
 
             <Button
                 android:id="@+id/btnResponder"

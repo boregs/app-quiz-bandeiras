@@ -12,7 +12,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class QuestionTwo extends AppCompatActivity {
+public class QuestionEight extends AppCompatActivity {
 
     private RadioButton radioBtn1, radioBtn2, radioBtn3, radioBtn4;
     private Button btnResponder;
@@ -22,7 +22,7 @@ public class QuestionTwo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_question2);
+        setContentView(R.layout.activity_question_eight);
         int score = getIntent().getIntExtra("USER_SCORE", 0);
         player = new Player("", score);
 
@@ -41,17 +41,17 @@ public class QuestionTwo extends AppCompatActivity {
     }
 
     public boolean isCorrectAnswer(){
-        return radioBtn2.isChecked();
+        return radioBtn4.isChecked();
     }
 
     public void nextQuestion(View view){
         if (isCorrectAnswer()){
             player.setScore(player.getScore() +1);
         }
-        Intent thirdQuestion = new Intent(getApplicationContext(), QuestionThree.class);
+        Intent ninthQuestion = new Intent(getApplicationContext(), QuestionNine.class);
 
-        thirdQuestion.putExtra("USER_SCORE", player.getScore());
-        startActivity(thirdQuestion);
+        ninthQuestion.putExtra("USER_SCORE", player.getScore());
+        startActivity(ninthQuestion);
 
         System.out.println(player.getScore());
     }
