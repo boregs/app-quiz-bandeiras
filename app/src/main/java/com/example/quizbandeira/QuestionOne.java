@@ -16,14 +16,16 @@ public class QuestionOne extends AppCompatActivity {
 
     private RadioButton radioBtn1, radioBtn2, radioBtn3, radioBtn4;
     private Button btnResponder;
-    Intent intent = getIntent();
-    Player player = (Player) intent.getSerializableExtra("USER_SCORE");
+    Player player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_quiz);
+        setContentView(R.layout.activity_question1);
+        int score = getIntent().getIntExtra("USER_SCORE", 0);
+        player = new Player("", score);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
