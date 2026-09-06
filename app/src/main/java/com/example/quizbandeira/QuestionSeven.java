@@ -22,7 +22,7 @@ public class QuestionSeven extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_question1);
+        setContentView(R.layout.activity_question_seven);
         int score = getIntent().getIntExtra("USER_SCORE", 0);
         player = new Player("", score);
 
