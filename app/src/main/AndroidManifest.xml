@@ -22,7 +22,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".quiz"
+            android:name=".QuestionOne"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".QuestionTwo"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>

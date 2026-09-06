@@ -34,10 +34,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void iniciar(View view){
-        Intent it = new Intent(getApplicationContext(), quiz.class);
+        Intent it = new Intent(getApplicationContext(), QuestionOne.class);
+        Player player = new Player(edtNome.getText().toString(), 0);
+        it.putExtra("USER_SCORE", player.getScore());
         startActivity(it);
-
-
-
     }
 }
