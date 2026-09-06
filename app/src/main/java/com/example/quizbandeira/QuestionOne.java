@@ -41,7 +41,7 @@ public class QuestionOne extends AppCompatActivity {
     }
 
     public boolean isCorrectAnswer(){
-        return radioBtn4.isActivated();
+        return radioBtn4.isChecked();
     }
 
     public void nextQuestion(View view){
