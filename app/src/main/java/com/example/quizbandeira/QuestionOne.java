@@ -45,10 +45,9 @@ public class QuestionOne extends AppCompatActivity {
     }
 
     public void nextQuestion(View view){
-        if (!isCorrectAnswer()){
-            player.setScore(+0);
+        if (isCorrectAnswer()){
+            player.setScore(player.getScore() +1);
         }
-        player.setScore(+1);
         Intent secondQuestion = new Intent(getApplicationContext(), QuestionTwo.class);
 
         secondQuestion.putExtra("USER_SCORE", player.getScore());
