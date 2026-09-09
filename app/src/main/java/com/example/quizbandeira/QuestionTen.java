@@ -23,8 +23,12 @@ public class QuestionTen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_question_ten);
+
+        // Recupera o placar e o nome que vêm sendo carregados de tela em tela
+        // via Intent, desde a MainActivity.
         int score = getIntent().getIntExtra("USER_SCORE", 0);
-        player = new Player("", score);
+        String name = getIntent().getStringExtra("USER_NAME");
+        player = new Player(name, score);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -38,6 +42,16 @@ public class QuestionTen extends AppCompatActivity {
         radioBtn4 = findViewById(R.id.radioBtn4);
 
         btnResponder = findViewById(R.id.btnResponder);
+
+        // Regra do enunciado: o botão RESPONDER só deve ficar habilitado
+        // depois que o usuário escolher uma alternativa.
+        btnResponder.setEnabled(false);
+
+        View.OnClickListener habilitarResponder = v -> btnResponder.setEnabled(true);
+        radioBtn1.setOnClickListener(habilitarResponder);
+        radioBtn2.setOnClickListener(habilitarResponder);
+        radioBtn3.setOnClickListener(habilitarResponder);
+        radioBtn4.setOnClickListener(habilitarResponder);
     }
 
     public boolean isCorrectAnswer(){
@@ -46,13 +60,16 @@ public class QuestionTen extends AppCompatActivity {
 
     public void nextQuestion(View view){
         if (isCorrectAnswer()){
-            player.setScore(player.getScore() +1);
+            player.setScore(player.getScore() + 1);
         }
-        Intent result = new Intent(getApplicationContext(), QuestionNine.class); // Rafael: TODO: colocar a pagina de resultados dps disso aq
+        Intent next = new Intent(getApplicationContext(), RankingActivity.class);
+        next.putExtra("USER_SCORE", player.getScore());
+        next.putExtra("USER_NAME", player.getName());
+        startActivity(next);
 
-        result.putExtra("USER_SCORE", player.getScore());
-        startActivity(result);
-
-        System.out.println(player.getScore());
+        // Encerra esta tela de pergunta. Assim ela some da pilha (back stack)
+        // e, se o usuário apertar o botão "voltar" do aparelho, ele nunca
+        // retorna para uma pergunta já respondida.
+        finish();
     }
 }
