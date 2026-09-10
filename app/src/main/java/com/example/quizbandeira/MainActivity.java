@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         Intent it = new Intent(getApplicationContext(), QuestionOne.class);
         Player player = new Player(edtNome.getText().toString(), 0);
         it.putExtra("USER_SCORE", player.getScore());
+        it.putExtra("USER_NAME",player.getName());
         startActivity(it);
     }
 }

@@ -25,7 +25,8 @@ public class QuestionSeven extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_question_seven);
         int score = getIntent().getIntExtra("USER_SCORE", 0);
-        player = new Player("", score);
+        String name = getIntent().getStringExtra("USER_NAME");
+        player = new Player(name, score);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -69,6 +70,7 @@ public class QuestionSeven extends AppCompatActivity {
         Intent eighthQuestion = new Intent(getApplicationContext(), QuestionEight.class);
 
         eighthQuestion.putExtra("USER_SCORE", player.getScore());
+        eighthQuestion.putExtra("USER_NAME", player.getName());
         startActivity(eighthQuestion);
 
         System.out.println(player.getScore());
