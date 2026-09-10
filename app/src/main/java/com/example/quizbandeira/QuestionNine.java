@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.RadioButton;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -45,6 +46,16 @@ public class QuestionNine extends AppCompatActivity {
         radioBtn2.setOnClickListener(habilitarResponder);
         radioBtn3.setOnClickListener(habilitarResponder);
         radioBtn4.setOnClickListener(habilitarResponder);
+
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     public boolean isCorrectAnswer(){
