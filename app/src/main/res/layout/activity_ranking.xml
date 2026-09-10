@@ -70,9 +70,9 @@
             <Button
                 android:id="@+id/btnResponderNovamente"
                 style="@style/Widget.Material3.Button"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0"
                 android:backgroundTint="#008BFF"
                 android:onClick="responderNovamente"
                 android:text="RESPONDER NOVAMENTE" />
@@ -80,9 +80,9 @@
             <Button
                 android:id="@+id/btnTelaPrincipal"
                 style="@style/Widget.Material3.Button"
-                android:layout_width="0dp"
+                android:layout_width="189dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0"
                 android:backgroundTint="#008BFF"
                 android:onClick="telaPrincipal"
                 android:text="TELA PRINCIPAL" />
