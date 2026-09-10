@@ -38,6 +38,13 @@ public class QuestionFour extends AppCompatActivity {
         radioBtn4 = findViewById(R.id.radioBtn4);
 
         btnResponder = findViewById(R.id.btnResponder);
+        btnResponder.setEnabled(false);
+
+        View.OnClickListener habilitarResponder = v -> btnResponder.setEnabled(true);
+        radioBtn1.setOnClickListener(habilitarResponder);
+        radioBtn2.setOnClickListener(habilitarResponder);
+        radioBtn3.setOnClickListener(habilitarResponder);
+        radioBtn4.setOnClickListener(habilitarResponder);
     }
 
     public boolean isCorrectAnswer(){
