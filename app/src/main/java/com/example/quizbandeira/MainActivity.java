@@ -2,6 +2,8 @@ package com.example.quizbandeira;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,6 +33,20 @@ public class MainActivity extends AppCompatActivity {
         edtNome = findViewById(R.id.edtNome);
         btnIniciar = findViewById(R.id.btnIniciar);
         btnSair = findViewById(R.id.btnSair);
+        btnIniciar.setEnabled(false);
+
+        edtNome.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                btnIniciar.setEnabled(s.toString().trim().length() > 0);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {}
+        });
     }
 
     public void iniciar(View view){
