@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:gravity="left"
+            android:gravity="center"
             android:textSize="18sp"
             tools:text="Fulano de Tal" />
 
@@ -42,7 +42,7 @@
             android:padding="16dp">
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="108dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Acertos:"
@@ -50,11 +50,14 @@
 
             <TextView
                 android:id="@+id/txtAcertos"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textSize="32sp"
-                android:textStyle="bold"
-                tools:text="10" />
+                android:layout_weight="1"
+                android:background="#22FAFF"
+                android:backgroundTint="#E5E7F8"
+                android:gravity="left"
+                android:text="10"
+                android:textSize="20sp" /> /
         </LinearLayout>
 
         <View
