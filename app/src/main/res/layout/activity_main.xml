@@ -162,7 +162,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="#008BFF"
-                android:onClick="iniciar"
+                android:onClick="fecharApp"
                 android:text="Sair" />
         </LinearLayout>
 

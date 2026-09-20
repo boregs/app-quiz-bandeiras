@@ -56,4 +56,7 @@ public class MainActivity extends AppCompatActivity {
         it.putExtra("USER_NAME",player.getName());
         startActivity(it);
     }
+    public void fecharApp(View view) {
+        finishAffinity();
+    }
 }
